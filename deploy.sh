@@ -1,12 +1,12 @@
 #!/bin/bash
 
-CLUSTERNAME="demo2"
-S3_BUCKETNAME="hpc-scripts1234"
+CLUSTERNAME="devinpcluster"
+S3_BUCKETNAME="devin-hpcscripts1234"
 SECURITYGROUP_RSW="sg-0ebc93e160de95498"
 SUBNETID="subnet-05b2495f54b720cd4"
 REGION="us-east-2"
-KEY="michael"
-CERT="/Users/michael/projects/aws/certs/michael.pem"
+KEY="devin.pastoor"
+CERT="/Users/devin/devin.pastoor.pem"
 
 cat scripts/aliases.tmpl | sed "s#CERT#${CERT}#" > scripts/aliases.sh
 cat scripts/install-rsw.sh.tmpl | sed "s#S3_BUCKETNAME#${S3_BUCKETNAME}#g" > scripts/install-rsw.sh

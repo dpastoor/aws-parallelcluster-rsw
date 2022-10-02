@@ -6,14 +6,11 @@ An opinionated setup of RStudio Workbench (RSW) for the use with AWS ParallelClu
 ## python venv (one time setup) 
 
 ```
-python3 -m venv aws-parallelcluster
-source aws-parallelcluster/bin/activate
-pip install --upgrade pip
+python3 -m venv .venv 
+source .venv/bin/activate.fish
+pip install --upgrade pip setuptools wheel
 pip install aws-parallelcluster 
 ```
-
-Once done, a `source aws-parallelcluster/bin/activate` will activate the `venv`, a simple `deactivate` will deactivate it again. 
-
 
 ## Edit config variables
 

@@ -57,3 +57,72 @@ if ( lspci | grep NVIDIA ); then
    apt-get update
    apt-get -y install cuda libcudnn8-dev
 fi
+
+apt-get install -y --no-install-recommends \
+        bzip2 \
+        ca-certificates \
+        gdebi-core \
+        git \
+        libcap2 \
+        libglib2.0-0 \
+        libpam-sss \
+        libpq5 \
+        libsm6 \
+        openssl \
+        libnss-sss \
+        libssl-dev \
+        libuser \
+        libuser1-dev \
+        libxext6 \
+        libxrender1 \
+        oddjob-mkhomedir \
+        openssh-client \
+        rrdtool \
+        librrd-dev \
+        sssd \
+        sudo \
+        supervisor \
+        wget \
+        awscli \
+        nginx-core \
+        nginx \
+        locales \
+        software-properties-common \
+        jq \
+        make \
+        vim \
+        chrony \
+        cargo \
+   gdal-bin \
+   git \
+   gsfonts \
+   imagemagick \
+   libcurl4-openssl-dev \
+   libfontconfig1-dev \
+   libfreetype6-dev \
+   libfribidi-dev \
+   libgdal-dev \
+   libgeos-dev \
+   libgit2-dev \
+   libharfbuzz-dev \
+   libjpeg-dev \
+   libmagick++-dev \
+   libpng-dev \
+   libpoppler-cpp-dev \
+   libproj-dev \
+   libprotobuf-dev \
+   libsodium-dev \
+   libssh2-1-dev \
+   libssl-dev \
+   libtiff-dev \
+   libudunits2-dev \
+   make \
+   pandoc \
+   pandoc-citeproc \
+   protobuf-compiler \
+   rustc \
+   zlib1g-dev \
+   ripgrep \
+   htop \
+   fd-find \
+   bat

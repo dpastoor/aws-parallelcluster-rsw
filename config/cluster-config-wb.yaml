@@ -4,23 +4,23 @@ HeadNode:
       Args: 
         - "3.6.3"
         - "4.2.1"
-      Script: "s3://S3_BUCKETNAME/install-rsw.sh"
+      Script: "s3://devin-hpcscripts1234/install-rsw.sh"
   Iam: 
     S3Access: 
-      - BucketName: S3_BUCKETNAME
+      - BucketName: devin-hpcscripts1234
   InstanceType: r6i.large 
   Networking: 
     AdditionalSecurityGroups: 
-      - SECURITYGROUP_RSW
-    SubnetId: SUBNETID
+      - sg-0ebc93e160de95498
+    SubnetId: subnet-05b2495f54b720cd4
   Ssh: 
-    KeyName: KEY 
+    KeyName: devin.pastoor 
   LocalStorage:
     RootVolume:
       Size: 100 
 Image: 
   Os: ubuntu2004
-Region: REGION
+Region: us-east-2
 Scheduling: 
   Scheduler: slurm
   SlurmQueues: 
@@ -33,13 +33,13 @@ Scheduling:
           Name: rstudio
       CustomActions: 
         OnNodeConfigured: 
-          Script: "s3://S3_BUCKETNAME/install-compute.sh" 
+          Script: "s3://devin-hpcscripts1234/install-compute.sh" 
       Iam: 
         S3Access: 
-          - BucketName: S3_BUCKETNAME
+          - BucketName: devin-hpcscripts1234
       Networking: 
         SubnetIds: 
-          - SUBNETID
+          - subnet-05b2495f54b720cd4
     - Name: memory 
       ComputeResources: 
         - Name: memory
@@ -48,13 +48,13 @@ Scheduling:
           MinCount: 0 
       CustomActions: 
         OnNodeConfigured: 
-          Script: "s3://S3_BUCKETNAME/install-compute.sh" 
+          Script: "s3://devin-hpcscripts1234/install-compute.sh" 
       Iam: 
         S3Access: 
-          - BucketName: S3_BUCKETNAME
+          - BucketName: devin-hpcscripts1234
       Networking: 
         SubnetIds: 
-          - SUBNETID
+          - subnet-05b2495f54b720cd4
     - Name: compute
       ComputeResources:
         - Name: compute
@@ -63,15 +63,15 @@ Scheduling:
           MinCount: 0
       CustomActions:
         OnNodeConfigured:
-          Script: "s3://S3_BUCKETNAME/install-compute.sh"
+          Script: "s3://devin-hpcscripts1234/install-compute.sh"
       Iam:
         S3Access:
-          - BucketName: S3_BUCKETNAME
+          - BucketName: devin-hpcscripts1234
       Networking:
         PlacementGroup:
           Enabled: TRUE
         SubnetIds: 
-          - SUBNETID
+          - subnet-05b2495f54b720cd4
     - Name: gpu 
       ComputeResources:
         - Name: gpu 
@@ -81,15 +81,15 @@ Scheduling:
           Name: gpu
       CustomActions:
         OnNodeConfigured:
-          Script: "s3://S3_BUCKETNAME/install-compute.sh"
+          Script: "s3://devin-hpcscripts1234/install-compute.sh"
       Iam:
         S3Access:
-          - BucketName: S3_BUCKETNAME
+          - BucketName: devin-hpcscripts1234
       Networking:
         PlacementGroup:
           Enabled: TRUE
         SubnetIds: 
-          - SUBNETID
+          - subnet-05b2495f54b720cd4
 
 Tags:
   - Key: rs:environment

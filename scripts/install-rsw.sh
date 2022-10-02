@@ -5,7 +5,7 @@ apt-get update -y
 apt-get install -y gdebi-core
 apt-get install -y openjdk-11-jdk openjdk-8-jdk
 apt-get install -y libfreetype6-dev libpng-dev libtiff5-dev
-aws s3 cp s3://S3_BUCKETNAME/run.R /tmp
+aws s3 cp s3://devin-hpcscripts1234/run.R /tmp
 
 for R_VERSION in "$@" 
 do
@@ -306,11 +306,11 @@ mkdir -p /opt/apptainer/containers
 grep slurm /etc/exports | sed 's#/opt/slurm#/opt/apptainer#' | sudo tee -a /etc/exports
 exportfs -ar
 
-aws s3 cp s3://S3_BUCKETNAME/run.R /tmp
-aws s3 cp s3://S3_BUCKETNAME/r-session.bionic.sdef /tmp
-aws s3 cp s3://S3_BUCKETNAME/r-session.centos7.sdef /tmp
-aws s3 cp s3://S3_BUCKETNAME/build-container.sh /tmp 
-aws s3 cp s3://S3_BUCKETNAME/spank.tgz /tmp
+aws s3 cp s3://devin-hpcscripts1234/run.R /tmp
+aws s3 cp s3://devin-hpcscripts1234/r-session.bionic.sdef /tmp
+aws s3 cp s3://devin-hpcscripts1234/r-session.centos7.sdef /tmp
+aws s3 cp s3://devin-hpcscripts1234/build-container.sh /tmp 
+aws s3 cp s3://devin-hpcscripts1234/spank.tgz /tmp
 
 cd /tmp
 tar xvfz spank.tgz

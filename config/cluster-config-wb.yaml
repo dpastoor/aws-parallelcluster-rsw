@@ -1,10 +1,7 @@
 HeadNode: 
   CustomActions: 
     OnNodeConfigured: 
-      Args: 
-        - "3.6.3"
-        - "4.2.1"
-      Script: "s3://devin-hpcscripts1234/install-rsw.sh"
+      Script: "s3://devin-hpcscripts1234/run-on-headnode.sh"
   Iam: 
     S3Access: 
       - BucketName: devin-hpcscripts1234
@@ -20,6 +17,7 @@ HeadNode:
       Size: 100 
 Image: 
   Os: ubuntu2004
+  CustomAmi: ami-061dc152260bb8d04
 Region: us-east-2
 Scheduling: 
   Scheduler: slurm

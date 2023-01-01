@@ -2,6 +2,9 @@
 
 apt-get update -y
 
+# disable stuff that shouldn't need to be running
+systemctl stop rstudio-server caddy apache2
+
 # Add sample user 
 groupadd --system --gid 10001 rstudio
 useradd -s /bin/bash -m --system --gid rstudio --uid 10001 rstudio

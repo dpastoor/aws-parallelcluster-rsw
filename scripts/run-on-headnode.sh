@@ -96,7 +96,7 @@ usermod -aG sudo ${username}
 su ${username} -c "mkdir -p /home/${username}/.ssh && chmod 0700 /home/${username}/.ssh"
 su ${username} -c "curl -o /home/${username}/.ssh/authorized_keys https://github.com/${username}.keys"
 su ${username} -c "chmod 0600 /home/${username}/.ssh/authorized_keys"
-echo '# Created by userdata\n ${username} ALL=(ALL) NOPASSWD:ALL' > "/etc/sudoers.d/999-${username}"
+echo "# Created by userdata\n ${username} ALL=(ALL) NOPASSWD:ALL" > "/etc/sudoers.d/999-${username}"
 chmod 0440 "/etc/sudoers.d/999-${username}"
 
 systemctl enable rstudio-launcher

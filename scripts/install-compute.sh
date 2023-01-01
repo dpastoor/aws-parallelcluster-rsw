@@ -30,3 +30,10 @@ if ( lspci | grep NVIDIA ); then
    apt-get update
    apt-get -y install cuda libcudnn8-dev
 fi
+
+username=dpastoor
+apt-get install -y ec2-instance-connect
+useradd --create-home --shell /bin/bash --user-group ${username} 
+usermod -aG sudo ${username}
+echo '# Created by userdata\n ${username} ALL=(ALL) NOPASSWD:ALL' > "/etc/sudoers.d/999-${username}"
+chmod 0440 "/etc/sudoers.d/999-${username}"

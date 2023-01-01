@@ -17,7 +17,7 @@ HeadNode:
       Size: 100 
 Image: 
   Os: ubuntu2004
-  CustomAmi: ami-061dc152260bb8d04
+  CustomAmi: ami-055962f6fdc782d0b
 Region: us-east-2
 Scheduling: 
   Scheduler: slurm
@@ -28,7 +28,6 @@ Scheduling:
           InstanceType: m6i.2xlarge
           MaxCount: 5
           MinCount: 0 
-          Name: rstudio
       CustomActions: 
         OnNodeConfigured: 
           Script: "s3://devin-hpcscripts1234/install-compute.sh" 
@@ -76,7 +75,6 @@ Scheduling:
           InstanceType: p3.2xlarge 
           MaxCount: 5
           MinCount: 0
-          Name: gpu
       CustomActions:
         OnNodeConfigured:
           Script: "s3://devin-hpcscripts1234/install-compute.sh"
@@ -93,6 +91,6 @@ Tags:
   - Key: rs:environment
     Value: development
   - Key: rs:owner
-    Value: devin.pastoor@rstudio.com
+    Value: devin.pastoor@posit.co
   - Key: rs:project
     Value: solutions 

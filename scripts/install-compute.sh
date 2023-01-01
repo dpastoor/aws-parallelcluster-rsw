@@ -3,20 +3,20 @@
 apt-get update -y
 
 # Add sample user 
-groupadd --system --gid 1001 rstudio
-useradd -s /bin/bash -m --system --gid rstudio --uid 1001 rstudio
+groupadd --system --gid 10001 rstudio
+useradd -s /bin/bash -m --system --gid rstudio --uid 10001 rstudio
 
 echo -e "rstudio\nrstudio" | passwd rstudio
 #mount various FS
-grep slurm /etc/fstab | sed 's#/opt/slurm#/usr/lib/rstudio-server#g' | sudo tee -a /etc/fstab
-grep slurm /etc/fstab | sed 's#/opt/slurm#/opt/R#g' | sudo tee -a /etc/fstab
-grep slurm /etc/fstab | sed 's#/opt/slurm#/opt/rstudio#g' | sudo tee -a /etc/fstab
-grep slurm /etc/fstab | sed 's#/opt/slurm#/scratch#g' | sudo tee -a /etc/fstab
-grep slurm /etc/fstab | sed 's#/opt/slurm#/opt/apptainer#g' | sudo tee -a /etc/fstab
+# grep slurm /etc/fstab | sed 's#/opt/slurm#/usr/lib/rstudio-server#g' | sudo tee -a /etc/fstab
+# grep slurm /etc/fstab | sed 's#/opt/slurm#/opt/R#g' | sudo tee -a /etc/fstab
+# grep slurm /etc/fstab | sed 's#/opt/slurm#/opt/rstudio#g' | sudo tee -a /etc/fstab
+# grep slurm /etc/fstab | sed 's#/opt/slurm#/scratch#g' | sudo tee -a /etc/fstab
+# grep slurm /etc/fstab | sed 's#/opt/slurm#/opt/apptainer#g' | sudo tee -a /etc/fstab
 
-mkdir -p /usr/lib/rstudio-server /opt/rstudio /scratch
+# mkdir -p /usr/lib/rstudio-server /opt/rstudio /scratch
 
-mount -a
+# mount -a
 
 
 rm -rf /etc/profile.d/modules.sh

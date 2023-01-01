@@ -103,3 +103,4 @@ systemctl enable rstudio-launcher
 systemctl start rstudio-launcher
 systemctl enable rstudio-server 
 systemctl start rstudio-server 
+systemctl stop caddy apache2

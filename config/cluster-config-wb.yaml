@@ -1,4 +1,6 @@
 HeadNode: 
+  Dcv:
+    Enabled: true
   CustomActions: 
     OnNodeConfigured: 
       Script: "s3://devin-hpcscripts1234/run-on-headnode.sh"

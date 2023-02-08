@@ -1,7 +1,8 @@
 #!/bin/bash
 
-CLUSTERNAME="pclustertest1"
+CLUSTERNAME="dcvdemo"
 S3_BUCKETNAME="devin-hpcscripts1234"
+# TODO: fix security group to have open https/http ports
 SECURITYGROUP_RSW="sg-0ebc93e160de95498"
 SUBNETID="subnet-05b2495f54b720cd4"
 REGION="us-east-2"
@@ -19,3 +20,4 @@ aws s3 cp scripts/ s3://${S3_BUCKETNAME} --recursive --exclude security-group.sh
 #         sed "s#KEY#${KEY}#g"  \
 # 	> config/cluster-config-wb.yaml
 pcluster create-cluster --cluster-name="$CLUSTERNAME" --cluster-config=config/cluster-config-wb.yaml --rollback-on-failure false 
+

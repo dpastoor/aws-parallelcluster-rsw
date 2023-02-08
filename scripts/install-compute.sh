@@ -36,7 +36,7 @@ fi
 
 username=dpastoor
 apt-get install -y ec2-instance-connect
-useradd --create-home --shell /bin/bash --user-group ${username} 
+useradd --shell /bin/bash --user-group ${username} 
 usermod -aG sudo ${username}
-echo '# Created by userdata\n ${username} ALL=(ALL) NOPASSWD:ALL' > "/etc/sudoers.d/999-${username}"
+echo "# Created by userdata\n ${username} ALL=(ALL) NOPASSWD:ALL" > "/etc/sudoers.d/999-${username}"
 chmod 0440 "/etc/sudoers.d/999-${username}"
